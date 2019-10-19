@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Cua Hang Thu Cung</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_login">Login</string>
+    <string name="name_splash">Welcome to Chimmy</string>
+
+    <string name="title_activity_user">Home</string>
+    <string name="titleUserMain">Main Screen</string>
+    <string name="titleUserNewFeed">New Feeds</string>
+    <string name="titleUserProfile">My Profile</string>
+    <string name="titleUserSellPet">Confirm your information</string>
+    <string name="messageUserSellPet">Are you really want to sell</string>
+    <string name="messageUserSellPet1">with</string>
+    <string name="messageUserSellPet2">You will lost your pet in your profile</string>
+    <string name="txtProfileSurplus">Surplus Money:</string>
+
+    <!--Login Activity-->
+    <string name="dont_account">Don’t have an account?</string>
+    <string name="register_now">Register now</string>
+    <string name="hello">Hello</string>
+    <string name="please">Please login to your account.</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="Forgot_Password">Forgot Password?</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="Media">Or Login using social media</string>
+    <string name="REGISTER">REGISTER</string>
+    <string name="Name">Name</string>
+    <string name="title_activity_main">Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pet_list">PetListActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

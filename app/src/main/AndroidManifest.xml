@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.dung.nhom6cuahangthucung">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <dist:module dist:instant="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SpashScreenActivity"
+            android:label="Cửa hàng thú cưng"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".user.PetListActivity"
+            android:label="Cửa hàng"
+            android:parentActivityName=".user.HomeActivity"></activity>
+        <activity
+            android:name=".user.PetDetailActivity"
+            android:label="Thông tin chi tiết"
+            android:parentActivityName=".user.PetListActivity"></activity>
+        <activity
+            android:name=".user.SignUpActivity"
+            android:label="Đăng ký"
+            android:parentActivityName=".user.LoginActivity"></activity>
+        <activity
+            android:name=".user.LoginActivity"
+            android:label="Đăng nhập"></activity>
+        <activity
+            android:name=".user.HomeActivity"
+            android:label="Màn hình chính"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>
