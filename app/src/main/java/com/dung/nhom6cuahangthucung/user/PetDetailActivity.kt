@@ -72,7 +72,7 @@ class PetDetailActivity : BaseActivity() {
                 }
             },
             Response.ErrorListener {
-                Toast.makeText(this, "That didn't work!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT).show()
             }
         )
 

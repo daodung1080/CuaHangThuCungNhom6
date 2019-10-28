@@ -1,16 +1,12 @@
-package com.dung.nhom6cuahangthucung.ui.petcart
+package com.dung.nhom6cuahangthucung.marketui.petcart
 
-import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.support.v4.app.Fragment
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -18,11 +14,9 @@ import com.android.volley.toolbox.Volley
 import com.dung.nhom6cuahangthucung.BaseFragment
 import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
-import com.dung.nhom6cuahangthucung.user.HomeActivity
 import com.squareup.picasso.Picasso
 import org.json.JSONException
 import org.json.JSONObject
-import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 class PetCartFragment : BaseFragment() {
@@ -73,7 +67,7 @@ class PetCartFragment : BaseFragment() {
                 }
             },
             Response.ErrorListener {
-                showMessage("That didn't work!")
+                showMessage("Vui lòng kiểm tra lại đường truyền")
             }
         )
         requestQueue.add(jsonObjectRequest)
@@ -107,7 +101,7 @@ class PetCartFragment : BaseFragment() {
                 }
             },
             Response.ErrorListener {
-                showMessage("That didn't work!")
+                showMessage("Vui lòng kiểm tra lại đường truyền")
             }
         )
 

@@ -1,4 +1,4 @@
-package com.dung.nhom6cuahangthucung.ui.petfind
+package com.dung.nhom6cuahangthucung.marketui.petfind
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,16 +14,13 @@ import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
 import com.dung.nhom6cuahangthucung.adapter.FindAdapter
-import com.dung.nhom6cuahangthucung.adapter.PetAdapter
 import com.dung.nhom6cuahangthucung.model.Pet
 import com.dung.nhom6cuahangthucung.user.PetDetailActivity
-import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -89,7 +86,7 @@ class PetFindFragment : Fragment() {
                 }
             },
             Response.ErrorListener {
-                Toast.makeText(context, "That didn't work! ${it.toString()}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Vui lòng kiểm tra lại đường truyền ${it.toString()}", Toast.LENGTH_SHORT).show()
             }
         )
 

@@ -3,7 +3,8 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.dung.nhom6cuahangthucung">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <dist:module dist:instant="true" />
 
     <application
@@ -13,6 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ManagementActivity"
+            android:label="@string/title_activity_management"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SpashScreenActivity"
             android:label="Cửa hàng thú cưng"
@@ -26,18 +31,18 @@
         <activity
             android:name=".user.PetListActivity"
             android:label="Cửa hàng"
-            android:parentActivityName=".user.HomeActivity"></activity>
+            android:parentActivityName=".user.HomeActivity" />
         <activity
             android:name=".user.PetDetailActivity"
             android:label="Thông tin chi tiết"
-            android:parentActivityName=".user.PetListActivity"></activity>
+            android:parentActivityName=".user.PetListActivity" />
         <activity
             android:name=".user.SignUpActivity"
             android:label="Đăng ký"
-            android:parentActivityName=".user.LoginActivity"></activity>
+            android:parentActivityName=".user.LoginActivity" />
         <activity
             android:name=".user.LoginActivity"
-            android:label="Đăng nhập"></activity>
+            android:label="Đăng nhập" />
         <activity
             android:name=".user.HomeActivity"
             android:label="Màn hình chính"

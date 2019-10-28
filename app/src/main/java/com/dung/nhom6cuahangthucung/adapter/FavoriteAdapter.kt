@@ -13,7 +13,6 @@ import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
 import com.dung.nhom6cuahangthucung.homeui.home.FavoriteFragment
 import com.dung.nhom6cuahangthucung.model.Pet
-import com.dung.nhom6cuahangthucung.ui.home.HomeFragment
 import com.squareup.picasso.Picasso
 import java.text.DecimalFormat
 

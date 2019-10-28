@@ -11,8 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.dung.nhom6cuahangthucung.R
 import com.dung.nhom6cuahangthucung.model.Pet
-import com.dung.nhom6cuahangthucung.ui.home.HomeFragment
-import com.dung.nhom6cuahangthucung.ui.petfind.PetFindFragment
+import com.dung.nhom6cuahangthucung.marketui.petfind.PetFindFragment
 import com.squareup.picasso.Picasso
 import java.text.DecimalFormat
 

@@ -1,13 +1,10 @@
-package com.dung.nhom6cuahangthucung.ui.petfind
+package com.dung.nhom6cuahangthucung.marketui.petfind
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.support.v4.app.Fragment
 import android.widget.TextView
-import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -15,8 +12,6 @@ import com.android.volley.toolbox.Volley
 import com.dung.nhom6cuahangthucung.BaseFragment
 import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
-import com.dung.nhom6cuahangthucung.user.HomeActivity
-import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -61,7 +56,7 @@ class UserProfileFragment : BaseFragment() {
                 }
             },
             Response.ErrorListener {
-                showMessage("That didn't work! ${it.toString()}")
+                showMessage("Vui lòng kiểm tra lại đường truyền ${it.toString()}")
             }
         )
         requestQueue.add(jsonObjectRequest)

@@ -33,38 +33,51 @@ class SignUpActivity : BaseActivity() {
             val requestQueue = Volley.newRequestQueue(this)
             var username = edtUsername.text.toString()
             var password = edtPassword.text.toString()
-            if (edtConfirmPassword.text.toString() != password) {
-                showMessage("Vui lòng nhập lại mật khẩu đúng với ô trên")
-            } else {
-                var url =
-                    "https://cuahangthucung.herokuapp.com/user/signup/?username=$username&password=$password"
+            if (username == "" && password == "") {
+                showMessage("Vui lòng không để trống thông tin")
+            }
+            else if(username == "admin"){
+                showMessage("Tên đăng nhập này đã được sử dụng")
+            }
+            else {
+                if (edtConfirmPassword.text.toString() != password) {
+                    showMessage("Vui lòng nhập lại mật khẩu đúng với ô trên")
+                } else {
+                    var url =
+                        "https://cuahangthucung.herokuapp.com/user/signup/?username=$username&password=$password"
 
-                // Initialize a new JsonObjectRequest instance
-                val jsonObjectRequest = JsonObjectRequest(
-                    Request.Method.GET,
-                    url,
-                    null,
-                    Response.Listener<JSONObject> { response ->
-                        try {
-                            // Get the current student (json object) data
-                            val result = response.getBoolean("result")
-                            if (result == true) {
-                                showMessage("Đăng ký thành công!")
-                                startActivity(Intent(this, LoginActivity::class.java))
-                            } else {
-                                showMessage("Tài khoản này đã được đăng ký trước đây")
+                    // Initialize a new JsonObjectRequest instance
+                    val jsonObjectRequest = JsonObjectRequest(
+                        Request.Method.GET,
+                        url,
+                        null,
+                        Response.Listener<JSONObject> { response ->
+                            try {
+                                // Get the current student (json object) data
+                                val result = response.getBoolean("result")
+                                if (result == true) {
+                                    showMessage("Đăng ký thành công!")
+                                    startActivity(Intent(this, LoginActivity::class.java))
+                                    onBackPressed()
+                                } else {
+                                    showMessage("Tài khoản này đã được đăng ký trước đây")
+                                }
+
+                            } catch (e: JSONException) {
+                                e.printStackTrace()
                             }
-
-                        } catch (e: JSONException) {
-                            e.printStackTrace()
+                        },
+                        Response.ErrorListener {
+                            Toast.makeText(this, "Vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT).show()
                         }
-                    },
-                    Response.ErrorListener {
-                        Toast.makeText(this, "That didn't work!", Toast.LENGTH_SHORT).show()
-                    }
-                )
-                requestQueue.add(jsonObjectRequest)
+                    )
+                    requestQueue.add(jsonObjectRequest)
+                }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

@@ -14,5 +14,9 @@
         android:id="@+id/nav_favorite"
         android:name="com.dung.nhom6cuahangthucung.homeui.home.FavoriteFragment"
         android:label="Yêu thích" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.dung.nhom6cuahangthucung.ui.send.SendFragment"
+        android:label="Đăng xuất" />
 
 </navigation>

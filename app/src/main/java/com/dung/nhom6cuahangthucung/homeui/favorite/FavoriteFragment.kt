@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,7 +16,6 @@ import com.android.volley.toolbox.Volley
 import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
 import com.dung.nhom6cuahangthucung.adapter.FavoriteAdapter
-import com.dung.nhom6cuahangthucung.adapter.PetAdapter
 import com.dung.nhom6cuahangthucung.model.Pet
 import com.dung.nhom6cuahangthucung.user.PetDetailActivity
 import org.json.JSONArray
@@ -34,7 +32,7 @@ class FavoriteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        root = inflater.inflate(R.layout.fragment_favorite, container, false)
         initView()
         getPetData()
         return root
@@ -88,7 +86,7 @@ class FavoriteFragment : Fragment() {
                 }
             },
             Response.ErrorListener {
-                Toast.makeText(context, "That didn't work!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT).show()
             }
         )
 

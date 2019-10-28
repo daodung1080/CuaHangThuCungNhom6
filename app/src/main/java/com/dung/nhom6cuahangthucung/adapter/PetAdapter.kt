@@ -12,11 +12,11 @@ import android.widget.Toast
 import com.dung.nhom6cuahangthucung.Constants
 import com.dung.nhom6cuahangthucung.R
 import com.dung.nhom6cuahangthucung.model.Pet
-import com.dung.nhom6cuahangthucung.ui.home.HomeFragment
+import com.dung.nhom6cuahangthucung.marketui.home.MartketHomeFragment
 import com.squareup.picasso.Picasso
 import java.text.DecimalFormat
 
-class PetAdapter(var context: Context, var list: ArrayList<Pet>, var fragment: HomeFragment)
+class PetAdapter(var context: Context, var list: ArrayList<Pet>, var fragmentMartket: MartketHomeFragment)
     : RecyclerView.Adapter<PetAdapter.PetHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PetHolder {
         var view = LayoutInflater.from(context).inflate(R.layout.list_item_pet, p0, false)
@@ -42,7 +42,7 @@ class PetAdapter(var context: Context, var list: ArrayList<Pet>, var fragment: H
             Toast.makeText(context, "Yêu thích ${pet.name} thành công!", Toast.LENGTH_SHORT).show()
         }
         holder.cvPet.setOnClickListener {
-            fragment.clickPet(p1)
+            fragmentMartket.clickPet(p1)
         }
     }
 

@@ -10,6 +10,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.dung.nhom6cuahangthucung.BaseActivity
 import com.dung.nhom6cuahangthucung.Constants
+import com.dung.nhom6cuahangthucung.ManagementActivity
 import com.dung.nhom6cuahangthucung.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_login.*
@@ -37,35 +38,43 @@ class LoginActivity : BaseActivity() {
             val requestQueue = Volley.newRequestQueue(this)
             var username = edtUsername.text.toString()
             var password = edtPassword.text.toString()
-            var url =
-                "https://cuahangthucung.herokuapp.com/user/login/?username=$username&password=$password"
+            if (username == "" && password == "") {
+                showMessage("Vui lòng không để trống thông tin")
+            } else if (username == "admin" && password == "admin") {
+                startActivity(Intent(this,ManagementActivity::class.java))
+                finish()
+            } else {
+                var url =
+                    "https://cuahangthucung.herokuapp.com/user/login/?username=$username&password=$password"
 
-            // Initialize a new JsonObjectRequest instance
-            val jsonObjectRequest = JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                Response.Listener<JSONObject> { response ->
-                    try {
-                        // Get the current student (json object) data
-                        val result = response.getBoolean("result")
-                        if (result == true) {
-                            showMessage("Đăng nhập thành công!")
-                            Constants.username = username
-                            startActivity(Intent(this, HomeActivity::class.java))
-                        } else {
-                            showMessage("Đăng nhập thất bại do tài khoản chưa được đăng ký")
+                // Initialize a new JsonObjectRequest instance
+                val jsonObjectRequest = JsonObjectRequest(
+                    Request.Method.GET,
+                    url,
+                    null,
+                    Response.Listener<JSONObject> { response ->
+                        try {
+                            // Get the current student (json object) data
+                            val result = response.getBoolean("result")
+                            if (result == true) {
+                                showMessage("Đăng nhập thành công!")
+                                Constants.username = username
+                                startActivity(Intent(this, HomeActivity::class.java))
+                                finish()
+                            } else {
+                                showMessage("Đăng nhập thất bại do tài khoản chưa được đăng ký")
+                            }
+
+                        } catch (e: JSONException) {
+                            e.printStackTrace()
                         }
-
-                    } catch (e: JSONException) {
-                        e.printStackTrace()
+                    },
+                    Response.ErrorListener {
+                        Toast.makeText(this, "Vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT).show()
                     }
-                },
-                Response.ErrorListener {
-                    Toast.makeText(this, "That didn't work!", Toast.LENGTH_SHORT).show()
-                }
-            )
-            requestQueue.add(jsonObjectRequest)
+                )
+                requestQueue.add(jsonObjectRequest)
+            }
         }
     }
 

@@ -3,13 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    android:padding="5dp">
+    android:background="@color/backgroundColor">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rvFavorite">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_margin="5dp"
+        android:id="@+id/rvUser"></android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>
