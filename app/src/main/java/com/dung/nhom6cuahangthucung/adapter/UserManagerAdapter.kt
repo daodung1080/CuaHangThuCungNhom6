@@ -34,9 +34,9 @@ class UserManagerAdapter(
 
     override fun onBindViewHolder(holder: PetHolder, p1: Int) {
         var pet = list.get(p1)
-        val fm = DecimalFormat("###,###,###")
-        holder.tvPetName.text = "Username: "+pet.username
-        holder.tvPetGenre.text = "Password: " + pet.password
+        holder.tvPetName.text = "Username: " + pet.username
+        holder.tvPetGenre.text =
+            "Họ tên: ${pet.name}\nSố điện thoại: ${pet.phone}\nEmail: ${pet.email}\nĐịa chị liên hệ: ${pet.address}"
         holder.imgLove.setOnClickListener {
             fragmentMartket.removeUser(p1)
         }

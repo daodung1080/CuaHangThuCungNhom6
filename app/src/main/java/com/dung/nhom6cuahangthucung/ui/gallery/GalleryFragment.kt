@@ -67,8 +67,12 @@ class GalleryFragment : BaseFragment() {
                         val id = jObject.getString("_id")
                         val username = jObject.getString("username")
                         val password = jObject.getString("password")
+                        val phone = jObject.getString("phoneNumber")
+                        val address = jObject.getString("address")
+                        val email = jObject.getString("email")
+                        val name = jObject.getString("hoten")
 
-                        list.add(User(id, username, password))
+                        list.add(User(id, username, password, address, phone, email, name))
 
                     }
                     adapter.notifyDataSetChanged()

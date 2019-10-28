@@ -25,17 +25,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3.9"
+                android:layout_weight="2"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imgPet"
+                    android:id="@+id/imgLove"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    app:srcCompat="@drawable/ic_profile">
-
-                </ImageView>
+                    android:layout_margin="2dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/ic_delete"></ImageView>
 
             </LinearLayout>
 
@@ -48,7 +48,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6"
+                android:layout_weight="7.9"
                 android:orientation="vertical"
                 android:weightSum="10">
 
@@ -56,8 +56,7 @@
                     android:id="@+id/tvPetName"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:gravity="center|start"
                     android:paddingLeft="10dp"
                     android:text="Chó Alasca"
@@ -70,45 +69,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="5dp"
-                    android:layout_weight="2"
+                    android:layout_weight="8"
                     android:gravity="center|start"
                     android:paddingLeft="10dp"
-                    android:text="Tại cửa hàng: còn"
-                    android:textSize="15dp"
+                    android:text="Name: Abc\nPhone: 0971536698\nEmail: adbssfd@gdgsga.com\nAddress: Yen Hoa Cau Giay"
                     android:textStyle="bold"></TextView>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.5"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="3.5"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4"
-                        android:orientation="horizontal"
-                        android:gravity="right"
-                        android:padding="5dp">
-
-                        <ImageView
-                            android:id="@+id/imgLove"
-                            android:layout_width="40dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="2dp"
-                            android:clickable="true"
-                            android:foreground="?android:attr/selectableItemBackground"
-                            android:src="@drawable/ic_delete"></ImageView>
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
 
             </LinearLayout>
 

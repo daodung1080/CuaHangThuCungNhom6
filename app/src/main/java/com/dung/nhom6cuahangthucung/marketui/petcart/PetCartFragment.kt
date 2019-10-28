@@ -36,6 +36,7 @@ class PetCartFragment : BaseFragment() {
         root = inflater.inflate(R.layout.fragment_pet_cart, container, false)
         initView()
         getData()
+        getUserData()
         btnBuy.setOnClickListener {
             pushOrder()
         }
@@ -117,5 +118,35 @@ class PetCartFragment : BaseFragment() {
         tvPetGenre = root.findViewById(R.id.tvPetGenre)
         imgPet = root.findViewById(R.id.imgPet)
         btnBuy = root.findViewById(R.id.btnBuy)
+    }
+
+    fun getUserData(){
+        val requestQueue = Volley.newRequestQueue(context)
+        var username = Constants.username
+        var url =
+            "https://cuahangthucung.herokuapp.com/user/findone/$username"
+
+        // Initialize a new JsonObjectRequest instance
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET,
+            url,
+            null,
+            Response.Listener<JSONObject> { response ->
+                try {
+                    // Get the current student (json object) data
+                    var name = response.getString("hoten")
+                    var email = response.getString("email")
+                    var phoneNumber = response.getString("phoneNumber")
+                    var address = response.getString("address")
+                    tvThongTin.text = "Khách hàng: ${name}\nSố điện thoại: ${phoneNumber}\nĐịa chỉ: ${address}\nThông tin khác: ${email}"
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            Response.ErrorListener {
+                showMessage("Vui lòng kiểm tra lại đường truyền ${it.toString()}")
+            }
+        )
+        requestQueue.add(jsonObjectRequest)
     }
 }
